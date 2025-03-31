@@ -12,6 +12,13 @@ services:
         ports:
             - '9234:8080'
         restart: 'always'
+        deploy:
+            resources:
+                limits:
+                    memory: 1g
+                reservations:
+                    memory: 512m
+        cpu_shares: 512
 
 networks:
   default:
